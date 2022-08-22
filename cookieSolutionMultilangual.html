@@ -1,0 +1,40 @@
+
+<!-- Reads the value of the <HTML> tag attribute "lang" and changes the Cookie Solution Script dinamically -->
+<!-- replace XXX1 with the site_id from your specific iubenda embed code -->
+<!-- replace XXX2 with the policy_id from your EN iubenda embed code -->
+<!-- replace XXX3 with the policy_id from your IT iubenda embed code -->
+
+<html lang="it-IT">
+<head>
+
+<script type="text/javascript">
+    
+var lang_id = document.getElementsByTagName('html')[0].getAttribute('lang').split("-")[0]; 
+        site_id = XXX1; // site_id from iubenda embed code
+    switch (lang_id) {
+        case 'en':
+            var policy_id = XXX2; // policy_id from iubenda embed code EN
+            break;
+        case 'it':
+            var policy_id = XXX3; // policy_id from iubenda embed code IT
+            break;
+            // case 'other language code' you can add another 
+    }
+    var _iub = _iub || [];
+    _iub.csConfiguration = {
+        "lang": lang_id,
+        "siteId": site_id,
+        "cookiePolicyId": policy_id,
+        "banner": {
+            "position": "top",
+            "applyStyles":true,
+        }
+    };
+</script>
+<script src="//cdn.iubenda.com/cs/ccpa/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async=""></script>
+</head>
+<body>
+</body>
+</html>
